@@ -8,17 +8,15 @@ public class Main{
 		// input 
 		int [][] plate = new int[16][11];
 		for(int i=1;i<=15;i++){
-			String str = sc.nextLine();
 			for(int j=1;j<=10;j++){
-				plate[i][j] = str.charAt((j-1)*2)-'0';
+				plate[i][j] = sc.nextInt();
 			}
 		}
 
 		int [][] block = new int[5][5];
 		for(int i=1;i<=4;i++){
-			String str = sc.nextLine();
 			for(int j=1;j<=4;j++){
-				block[i][j] = str.charAt((j-1)*2)-'0';
+				block[i][j] = sc.nextInt();
 			}
 		}
 
