@@ -1,44 +1,34 @@
-import java.util.ArrayList;
-import java.util.Collections;
+// 12:55 - 13:05
 import java.util.Scanner;
 
-
-public class N2017031 {
-	
-	public static void main_N2017031(String [] args) {
-		// input
-		int n,k,count=0;
+public class Main{
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+
+		int n,k,result=0;
 		n = sc.nextInt();
 		k = sc.nextInt();
-		
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		
+
+		int [] cakes = new int[n];
 		for(int i=0;i<n;i++){
-			list.add(sc.nextInt());
+			cakes[i] = sc.nextInt();
 		}
-		
-		// sort
-		Collections.sort(list);
-		
-		// distribute cake
-		int total = 0;
-		while(!list.isEmpty()) {
-			total += list.remove(0);
-			if(total>k) {
-				count++;
-				total = 0;
+
+		int weigh = 0;
+		for(int i=0;i<n;i++){
+			if(cakes[i]+weigh >= k){
+				result++;
+				weigh=0;
+			}else{
+				weigh+=cakes[i];
 			}
 		}
-		if(total!=0) {
-			count++;
+		if(weigh>0){
+			result++;
 		}
-		
-		// output result
-		System.out.print(count);
+
+		System.out.println(result);
+
 		sc.close();
 	}
-	
 }
-
-
