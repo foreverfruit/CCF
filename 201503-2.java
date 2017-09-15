@@ -41,7 +41,8 @@ public class Main{
 		Collections.sort(resultList,new Comparator<Map.Entry<Integer,Integer>>() {
 			@Override
 			public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
-				return -(o1.getValue() - o2.getValue());
+				int i = o2.getValue()-o1.getValue();
+				return i==0?(o1.getKey()-o2.getKey()):i;
 			}
             
         });
